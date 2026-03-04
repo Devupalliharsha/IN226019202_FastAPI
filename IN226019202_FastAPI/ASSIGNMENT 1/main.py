@@ -112,10 +112,11 @@ def get_deals():
         "premium_pick": expensive
     }
 
-# ── Endpoint — Return one product by ID (MUST BE LAST) ───────
+# ── Endpoint — Return one product by ID ───────
 @app.get('/products/{product_id}')
 def get_product(product_id: int):
     for product in products:
         if product['id'] == product_id:
             return {'product': product}
+
     return {'error': 'Product not found'}
